@@ -5,4 +5,4 @@ COPY ./ /
 WORKDIR /
 RUN chmod +x ./entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["https://marineregions.org/feed/"]
+CMD ["https://marineregions.org/feed"]
