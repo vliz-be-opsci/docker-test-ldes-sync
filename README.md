@@ -24,6 +24,6 @@ make docker-build
 ## usage
 
 ```sh
-docker run ldes-test-sync https://marineregions.org/feed/ > mrg-ldes-stream-output.ttl
+docker run ldes-test-sync https://marineregions.org/feed > mrg-ldes-stream-output.ttl
 ```
 
