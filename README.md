@@ -29,10 +29,13 @@ $ make docker-build
 $ docker run ldes-test-sync https://marineregions.org/feed > mrg-ldes-out-$(date --iso).ttl
 ```
 
-One can optionally set a custom logging level.  Be warned thoough these get mixed with the normal output and thus breaks format (turtle or json) 
+One can optionally tune some flags via environment variables (e.g. through a so called env-file). This includes:
+* setting a custom logging level.  Be warned thoough these get mixed with the normal output and thus breaks format (turtle or json) 
+* disabling the member deref (useful for feeds that have embedded members and don't need to support actual LOD details on the members)
 
 ```sh
 $ echo "LDES_LOGGING_LEVEL=debug" >> .env
+$ echo "LDES_NO_DEREF=1" >> .env
 
 $ docker run --env-file .env ldes-test-sync https://marineregions.org/feed > mrg-ldes-out-$(date --iso).ttl
 ```
